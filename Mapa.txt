@@ -1,0 +1,5 @@
+xxxxxx      0     xxxxxxxx
+xxxx      x   x       xxxx
+xxx      xxx xx   xx xxxxx
+x     xx xxxx          x x
+xxxx  xx        xx xx x xx
