@@ -45,8 +45,38 @@ class Mapa:
 
         return True
 
+    def iniciar_contador(self):
+        
+        fila = []
+        for i in range(len(self.mapa)):
+            
+            for j in range(len(self.mapa[i])):
+                fila.append(0)
+
+            self.contadores.append(fila)
+            fila = []
+            
+    def actualizar_contador(self,nodo):
+        self.contadores[nodo.fila][nodo.columna] += 1
+
+    def ver_campos_continuos(self,nodo):
+        nodos = []
+        i = nodo.fila
+        j = nodo.columna
+
+        for i in range(i-1, i+2):
+            for j in range(j-1, j+2):
+                nodos.append(self.mapa[i][j])
+
+        return nodos
+
+    def print_contadores(self):
+        for fila in range(len(self.contadores)):
+            for columna in range(len(self.contadores[fila])):
+                print(self.contadores[fila][columna])
+
     #Función encargada de la impresión de la matriz.
-    def printMapa(self,nodo):
+    def print_mapa(self,nodo):
 
         os.system ('cls')
 
