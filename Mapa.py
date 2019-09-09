@@ -1,7 +1,7 @@
 import os
 import Nodo
 
-class mapa:
+class Mapa:
     mapa = []
     contadores = []
 
@@ -9,7 +9,8 @@ class mapa:
     def cargar_mapa(self):
         fila=[] #variable de uso para meter en la matriz las filas del archivo.
         tam=0 #variable de tamaño, para saber si el tamaño de la matriz es uniforme.
-
+        fil = 0
+        col = 0
 
         #Bloque de código encargado de la carga del archivo.
         try:
@@ -19,9 +20,16 @@ class mapa:
                 fila=[]
                 for elemento in linea:
                     if elemento != '\n':
-                        fila.append(elemento)
+                        nodo = Nodo.Nodo()
+                        nodo.fila = fil
+                        nodo.columna = col
+                        nodo.objeto = elemento
+                        fila.append(nodo)
                         tam+=1
+                        col += 1
                 self.mapa.append(fila)
+                fil += 1
+                col = 0
 
             f.close()
 
@@ -38,7 +46,7 @@ class mapa:
         return True
 
     #Función encargada de la impresión de la matriz.
-    def printMapa(self):
+    def printMapa(self,nodo):
 
         os.system ('cls')
 
@@ -46,7 +54,10 @@ class mapa:
 
         for i in range(len(self.mapa)):
             for j in range(len(self.mapa[i])):
-                linea+=self.mapa[i][j]
+                if ( i == nodo.fila and j == nodo.columna):
+                    linea+=nodo.objeto
+                else:
+                    linea+=self.mapa[i][j].objeto
             print(linea)
             linea=""
 

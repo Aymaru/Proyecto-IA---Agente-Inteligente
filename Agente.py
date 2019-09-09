@@ -4,25 +4,22 @@ import Nodo
 
 #Clase del agente la cual contiene la ubicación del mismo como atributos y un metodo caminar.
 class Agente:
-    i=0
-    j=0
+    ubicacion = Nodo.Nodo()
 
     #constructor encargado de ubicar el agente en el mapa.
-    def __init__(self, mapa):
+    def __init__(self, posicion):
+        self.ubicacion.fila = posicion[0]
+        self.ubicacion.columna = posicion[1]
 
-        for i in range(len(mapa)):
-            for j in range(len(mapa[i])):
-                if mapa[i][j]=='0':
-                    self.i=i
-                    self.j=j
+        
 
     #Método encargado de mover al agente por el mapa, al igual que mirar a su alrededor.
     def caminar(self, mapa):
 
         direcciones=[]
 
-        for i in range(self.i-1, self.i+2):
-            for j in range(self.j-1, self.j+2):
+        for i in range(self.ubicacion.fila-1, self.ubicacion.fila+2):
+            for j in range(self.ubicacion.columna-1, self.ubicacion.columna+2):
                 try:
                     if(mapa[i][j] in {' ', '    '}):
                         direcciones.append([i,j])
@@ -47,12 +44,12 @@ class Agente:
 #            movimiento = direcciones[i]
 
             if(movimiento!=0):
-                mapa[self.i][self.j]=' '
+                mapa[self.ubicacion.fila][self.ubicacion.columna]=' '
                 mapa[movimiento[0]][movimiento[1]]='0'
-                self.i=movimiento[0]
-                self.j=movimiento[1]
+                self.ubicacion.fila=movimiento[0]
+                self.ubicacion.columna=movimiento[1]
 
-                print("Seleccionado: "+str([self.i,self.j]))
+                print("Seleccionado: "+str([self.ubicacion.fila,self.ubicacion.columna]))
 
                 time.sleep(2)
 
