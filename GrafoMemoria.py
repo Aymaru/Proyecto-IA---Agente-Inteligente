@@ -1,4 +1,5 @@
 
+#Estructura de datos para memoria
 class Grafo:
     
     grafo = {}
