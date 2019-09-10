@@ -14,13 +14,13 @@ def main():
                 #Ciclo de movimiento del agente a través del mapa, con el método del agente 
                 #, el print del mapa y un sleep del time, todo esto para crear una simulación de 
                 # interfaz.
+                explorar=True
 
-                while True:
+                while explorar:
                     MapaNuevo.print_mapa(Bichito.ubicacion)
                     MapaNuevo.actualizar_contador(Bichito.ubicacion)
-                    Bichito.moverse(MapaNuevo.ver_campos_continuos(Bichito.ubicacion))
-                    MapaNuevo.print_contadores()
-                    Bichito.memoria.print_grafo()
+                    explorar = Bichito.moverse(MapaNuevo.ver_campos_continuos(Bichito.ubicacion))
+                    #MapaNuevo.print_contadores()
                     time.sleep(1)
 
         else:

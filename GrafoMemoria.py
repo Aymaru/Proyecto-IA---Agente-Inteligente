@@ -60,14 +60,6 @@ class Grafo:
             s+="\n"
 
         print(s)
-    
-    def buscar_ruta(self, inicial, final):
-
-        #novisitados=[]
-
-        #while(novisitados!=[]):
-
-        return 0
 
 
             

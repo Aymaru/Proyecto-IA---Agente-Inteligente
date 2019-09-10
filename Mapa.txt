@@ -1,5 +1,5 @@
-xxxxxx            xxxxxxxx
-xxxx      x   x       xxxx
-xxx      xxx xx   xx xxxxx
+xxxxxx       @    xxxxxxxx
+xxxx      x   x     @ xxxx
+xxx   @  xxx xx   xx xxxxx
 x     xx xxxx          x x
-xxxx  xx        xx xx x xx
+xxxx  xx    @   xx xx x xx
