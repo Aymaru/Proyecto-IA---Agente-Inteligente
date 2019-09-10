@@ -19,7 +19,7 @@ class Grafo:
         for i in self.grafo:
             if([i.fila, i.columna] == [nodo.fila, nodo.columna]):
                 return i 
-        return False
+        return []
         
  
     def add_arista(self, nodo, arista):
@@ -54,7 +54,20 @@ class Grafo:
         s= "nodo -> aristas\n"
 
         for i, j in list(self.grafo.items()):
-            s+=str(i)+" -> "+str(j)+"\n"
+            s+=str([i.fila, i.columna])+str(i.contador)+" -> "
+            for k in j:
+                s+= str([k.fila, k.columna])+", "
+            s+="\n"
+
         print(s)
+    
+    def buscar_ruta(self, inicial, final):
+
+        #novisitados=[]
+
+        #while(novisitados!=[]):
+
+        return 0
+
 
             

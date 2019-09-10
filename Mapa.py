@@ -20,10 +20,7 @@ class Mapa:
                 fila=[]
                 for elemento in linea:
                     if elemento != '\n':
-                        nodo = Nodo.Nodo()
-                        nodo.fila = fil
-                        nodo.columna = col
-                        nodo.objeto = elemento
+                        nodo = Nodo.Nodo(fil, col, elemento)
                         fila.append(nodo)
                         tam+=1
                         col += 1
@@ -58,6 +55,8 @@ class Mapa:
                 for columna in range(j-1, j+2):
                     if(columna < len(self.mapa[i]) and columna>=0):
                         nodos.append(self.mapa[fila][columna])
+
+        nodos.remove(self.mapa[i][j])
 
         return nodos
 
