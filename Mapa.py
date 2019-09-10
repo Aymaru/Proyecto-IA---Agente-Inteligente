@@ -3,7 +3,7 @@ import Nodo
 
 class Mapa:
     mapa = []
-    contadores=[]
+    contadores = []
 
 #Función encargada de la carga del mapa desde un text a la variable global -mapa-.
     def cargar_mapa(self):
@@ -46,7 +46,7 @@ class Mapa:
         return True
 
     def actualizar_contador(self,nodo):
-        self.contadores[nodo.fila][nodo.columna] += 1
+        self.mapa[nodo.fila][nodo.columna].contador += 1
 
     def ver_campos_continuos(self,nodo):
         nodos = []
@@ -61,21 +61,10 @@ class Mapa:
 
         return nodos
 
-     def iniciar_contador(self):
-
-        fila = []
-        for i in range(len(self.mapa)):
-
-            for j in range(len(self.mapa[i])):
-                fila.append(0)
-
-            self.contadores.append(fila)
-            fila = []
-
     def print_contadores(self):
-        for fila in range(len(self.contadores)):
-            for columna in range(len(self.contadores[fila])):
-                print(self.contadores[fila][columna])
+        for fila in range(len(self.mapa)):
+            for columna in range(len(self.mapa[fila])):
+                print(self.mapa[fila][columna].contador)
 
     #Función encargada de la impresión de la matriz.
     def print_mapa(self,nodo):

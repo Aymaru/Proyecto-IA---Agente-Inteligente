@@ -9,13 +9,12 @@ def main():
 
                 #Esta es una instancia del agente que creamos.
                 posicion_inicial = [0,12]
-                Bichito = Agente.Agente(posicion_inicial)
+                Bichito = Agente.Agente(posicion_inicial,'0')
                 #Ciclo de movimiento del agente a través del mapa, con el método del agente 
                 #, el print del mapa y un sleep del time, todo esto para crear una simulación de 
                 # interfaz.
                 while True:
-                    MapaNuevo.printMapa(Bichito.ubicacion)
-                    MapaNuevo.mapa = Bichito.caminar(MapaNuevo.mapa)
+                    MapaNuevo.print_mapa(Bichito.ubicacion)
 
         else:
                 print("¡Mapa con errores!")
