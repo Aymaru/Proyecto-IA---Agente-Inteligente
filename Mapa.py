@@ -54,22 +54,29 @@ class Mapa:
         j = nodo.columna
 
         for fila in range(i-1, i+2):
-            for columna in range(j-1, j+2):
-                nodos.append(self.mapa[fila][columna])
+            if(fila < len(self.mapa) and fila>=0):
+                for columna in range(j-1, j+2):
+                    if(columna < len(self.mapa[i]) and columna>=0):
+                        nodos.append(self.mapa[fila][columna])
 
         nodos.remove(self.mapa[i][j])
 
         return nodos
 
     def print_contadores(self):
+
+        linea=""
+
         for fila in range(len(self.mapa)):
             for columna in range(len(self.mapa[fila])):
-                print(self.mapa[fila][columna].contador)
+                linea+=str(self.mapa[fila][columna].contador)+" "
+            print(linea)
+            linea=""
 
     #Función encargada de la impresión de la matriz.
     def print_mapa(self,nodo):
 
-        os.system ('cls')
+        os.system ('clear')
 
         linea=""
 

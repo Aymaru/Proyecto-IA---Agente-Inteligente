@@ -1,5 +1,4 @@
 import random
-import time
 import Nodo
 
 #Clase del agente la cual contiene la ubicación del mismo como atributos y un metodo caminar.
@@ -17,5 +16,11 @@ class Agente:
     #Método encargado de mover al agente por el mapa, al igual que mirar a su alrededor.
     def caminar(self, vista):
 
-        print("vacío")
-            
+        while(True):
+
+            movimiento = vista[random.randint(0,len(vista)-1)]
+
+            if(movimiento.objeto in {' ', '    ', '@'}):
+                self.ubicacion.fila = movimiento.fila
+                self.ubicacion.columna = movimiento.columna
+                return 0
