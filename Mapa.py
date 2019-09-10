@@ -59,8 +59,6 @@ class Mapa:
                     if(columna < len(self.mapa[i]) and columna>=0):
                         nodos.append(self.mapa[fila][columna])
 
-        nodos.remove(self.mapa[i][j])
-
         return nodos
 
     def print_contadores(self):
